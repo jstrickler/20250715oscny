@@ -1,0 +1,64 @@
+---
+title: "Python Curriculum Map"
+config:
+    theme: base
+---
+flowchart TD
+    subgraph anyintro ["<b>Intro Level Courses</b>"]
+        basics["Python Basics <i>3-day</i><ul><li>The Python environment</li><li>variables</li><li>I/O</li><li>flow control</li><li>lists and tuples</li><li>dictionaries</li><li>functions</li><li>modules\sorting</li><li>classes</li><ul>"]
+        practical["Practical Python <i>5-day</i><ul><li>all topics in Python Basics</li><li>regular expressions</li><li>dates and times</li><li>network programming</li><li>creating scripts</li><li>virtual environments</li><ul>"]
+    style basics text-align:left
+    style practical text-align:left
+    end
+
+    subgraph datascience ["<b>Data Science Courses</b>"]
+        pysci3["Python for Data Science <i>3-day</i><ul><li>Using IPython and Jupyterlab</li><li>the Python environment</li><li>variables and values</li><li>basic input/output</li><li>flow control</li><li>array types</li><li>dictionaries and sets</li><li>functions, modules, and packages</li><li>Working with Excel</li><li>intro to numpy</li><li>intro to pandas</li><li>intro to Matplotlib</li></ul>"]
+        pysci4["Python for Data Science <i>4-day</i><ul><li>Using IPython and Jupyterlab</li><li>the Python environment</li><li>variables and values</li><li>basic input/output</li><li>flow control</li><li>array types</li><li>dictionaries and sets</li><li>functions, modules, and packages</li><li>error handling and logging</li><li>OOP intro</li><li>developer tools</li><li>Working with Excel</li><li>intro to numpy</li><li>intro to pandas</li><li>intro to Matplotlib</li></ul>"]
+        style pysci3 text-align:left
+        style pysci4 text-align:left
+    end
+
+    subgraph django ["<b>Django Courses</b>"]
+        djangointro["Django Intro\n<i>3-day</i>"]
+        djangoboot["Django Boot Camp\n<i>5-day</i>"]
+        djangocomp["Comprehensive Django\n<i>5-day</i>"]
+        subgraph djangoplus ["<b>Beyond Basic Django</b>"]
+            advdjango["Advanced Django\n<i>4-day</i>"]
+            djangorest["DJango REST APIs\n<i>5-day</i>"]
+        end
+        djangointro --> djangoplus
+        djangoboot --> djangoplus
+        djangocomp --> djangoplus
+        
+    end
+
+    subgraph flask ["<b>Flask Courses</b>"]
+        flaskintro["Introduction to Flask\n<i>2-day</i>"]
+        flaskboot["Flask Boot Camp\n<i>5-day</i>"]
+        subgraph flaskplus ["<b>Beyond Basic Flask</b"]
+            advflask["Advanced Flask"]
+            flaskrest2["Flask REST APIs\n<i>2-day</i>"]
+            flaskrest4["Flask REST APIs\n<i>4-day</i>"]
+        end
+        flaskintro --> flaskplus
+        flaskboot--> flaskplus
+    end
+
+    subgraph postintro["<b>Beyond Intro Level Courses</b>"]
+        interm["Intermediate Python\n<i>4-day</i><ul></li><li>working with the OS</li><li>binary data</li><li>Pythonic programming</li><li>advanced OOP</li><li>modules and packages</li><li>metaprogramming</li><li>developer tools</li><li>unit testing</li><li>database access</li><li>GUI applications</li><li>multiprogramming</li><li>serializing data</li><ul>"]
+        advanced["Advanced Python\n<i>4-day</i><ul><li>modules and packages</li><li>packaging for distribution</li><li>advanced OOP</li><li>Pythonic programming</li><li>logging</li><li>unit tests</li><li>data structures</li><li>serializing data</li><li>binary data</li><li>iterables and iterators</li><li>functional tools.asc</li><li>metaprogramming.asc</li><li>consuming rest data.asc</li><li>multiprogramming.asc</li></ul>"]
+        style interm text-align:left
+        style advanced text-align:left
+    end
+
+    anyintro --> postintro
+    anyintro --> datascience
+    anyintro --> django
+    anyintro --> flask
+
+    classDef green fill:#bcf5b8
+    class anyintro green
+    classDef blue fill:#bfebf2
+    class pysci3,pysci4,djangoboot,flaskboot blue
+    classDef red fill:#f5b8c3/
+    class extreme,advdjango red

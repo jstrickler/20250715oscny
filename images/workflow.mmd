@@ -1,0 +1,14 @@
+flowchart TD
+    START[Start workflow] --> READ[Read data]
+    READ --> VALIDATE[Validate data]
+    READ --> READ_ERR[Log read errors]
+    VALIDATE --> PROCESS[Process data]
+    VALIDATE --> VALIDATE_ERR[Log validation errors]
+    PROCESS --> VISUALIZE[Visualize Data]
+    VISUALIZE --> VISUALIZE_ERR[Log visualization errors]
+    PROCESS --> WRITE[Write data to file]
+    PROCESS --> PROCESS_ERR[Log processing errors]
+    WRITE --> WRITE_ERR[Log write errors]
+
+    classDef green fill:#9f6,stroke:#333,font-style:italic,stroke-width:2px
+    class VALIDATE_ERR,VISUALIZE_ERR,WRITE_ERR,PROCESS_ERR,READ_ERR green

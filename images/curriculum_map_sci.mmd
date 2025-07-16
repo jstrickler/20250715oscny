@@ -1,0 +1,16 @@
+---
+title: JS Consulting Data Science Curriculum Map
+---
+flowchart LR
+    basics["Python Basics <i>3-day</i>"]
+    intro["Intro to Python <i>4-day</i>"]
+    pysci3day["Python for Scientists\n<i>3-day</i>"]
+    pysci["Python for Scientists <i>5-day</i>"]
+
+    basics --> pysci3day
+    intro --> pysci3day
+
+    classDef green fill:#bcf5b8
+    class basics,intro,pysci green
+    classDef blue fill:#bfebf2
+    class pysci3day blue

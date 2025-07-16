@@ -1,0 +1,44 @@
+---
+title "Python Function Argument Assignment"
+---
+flowchart LR
+    START --> CREATE["`Create a 'slot' for each defined parameter, including **varargs** (*param) and **kwargs** (**param) if specified`"] --> EMPTY[Mark all slots as empty]
+    EMPTY --> MORE[Are there more arguments?]
+    MORE --> |YES|NEXT[Get next argument]
+    MORE --> |NO|CHECK_OPT["`**varargs** empty?`"]
+    CHECK_OPT --> |YES|DEFAULT_VARARGS["`Assign empty tuple to **varargs** slot`"]
+    CHECK_OPT --> |NO|CHECK_KWARGS["`**kwargs** empty?`"]
+    DEFAULT_VARARGS --> CHECK_KWARGS
+    CHECK_KWARGS --> |YES|DEFAULT_KWARGS["`Assign empty dict to **kwargs** slot`"]
+    CHECK_KWARGS --> |NO|DONE[Finished!]
+    DEFAULT_KWARGS --> DONE
+    NEXT --> IS_NAMED[Argument named or positional?]
+    IS_NAMED --> |NAMED|NAME_MATCH[Slot with matching name?]
+    IS_NAMED --> |POSITIONAL|CHECK[Any named arguments added?]
+    CHECK --> |YES|ERROR
+    CHECK --> |NO|POS_FULL[All positional slots filled?]
+    POS_FULL --> |YES|HAS_VARARGS["`Is there a **varargs** slot?`"]
+    HAS_VARARGS --> |YES|FILL_VARARGS["`Add to **varargs** slot`"]
+    HAS_VARARGS --> |NO|ERROR
+    POS_FULL --> |NO|FILL_POS[Fill next positional slot]
+    NAME_MATCH --> |YES|NAME_USED[Name already been used?]
+    NAME_USED --> |YES|ERROR
+    NAME_USED --> |NO|FILL_NAMED[Fill slot with matching name]
+    NAME_MATCH -->  |NO|HAS_KWARGS["`Is there a **kwargs** slot?`"]
+    HAS_KWARGS --> |YES|FILL_KWARGS["`Add to **kwargs** slot`"]
+    HAS_KWARGS --> |NO|ERROR
+    %% after filling a slot, check for more arguments
+    FILL_POS --> MORE
+    FILL_NAMED --> MORE
+    FILL_KWARGS --> MORE
+    FILL_VARARGS --> MORE
+    ERROR[Raise error]
+
+    classDef green fill:#bcf5b8
+    class DONE green
+
+    classDef red fill:#f5b8c3
+    class ERROR red
+
+    classDef blue fill:#bfebf2
+    class FILL_POS,FILL_NAMED,FILL_KWARGS,FILL_VARARGS blue

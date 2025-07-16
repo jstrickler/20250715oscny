@@ -1,0 +1,27 @@
+flowchart LR
+    APP[Currrent\nProject] --> MOD_PROJECT_1[project\nmodule]
+    APP[Currrent\nProject] --> MOD_PROJECT_2[project\nmodule]
+    STD[Standrd Library] --> MOD_STDLIB_1[stdlib\nmodule]
+    STD[Standrd Library] --> MOD_STDLIB_2[stdlib\nmodule]
+    LOCAL[Local package] --> MOD_LOCAL_1[local\nmodule]
+    LOCAL[Local package] --> MOD_LOCAL_2[local\nmodule]
+    PYPI[PyPI] -->|Install with pip|MOD_THIRD_PARTY_1[third-party\nmodule]
+    PYPI[PyPI] -->|Install with pip|MOD_THIRD_PARTY_2[third-party\nmodule]
+    MOD_PROJECT_1 -->|import|MAIN
+    MOD_PROJECT_2 -->|import|MAIN
+    MOD_STDLIB_1 -->|import|MAIN
+    MOD_STDLIB_2 -->|import|MAIN
+    MOD_STDLIB_1 -->|import|MOD_PROJECT_1
+    MOD_STDLIB_2 -->|import|MOD_LOCAL_1
+    MOD_LOCAL_1 -->|import|MAIN
+    MOD_LOCAL_2 -->|import|MAIN
+    MOD_THIRD_PARTY_1 -->|import|MAIN[MAIN SCRIPT\nUI logic]
+    MOD_THIRD_PARTY_2 -->|import|MAIN
+    MOD_THIRD_PARTY_1 -->|import|MOD_PROJECT_1
+    MOD_THIRD_PARTY_2 -->|import|MOD_LOCAL_2
+
+    classDef blue fill:#ebfff2
+    classDef green fill:#9f6,stroke:#333,font-style:italic,stroke-width:2px
+    class MAIN green
+    class MOD_THIRD_PARTY_1,MOD_THIRD_PARTY_2,MOD_PROJECT_1,MOD_PROJECT_2 blue
+    class MOD_LOCAL_1,MOD_LOCAL_2,MOD_STDLIB_1,MOD_STDLIB_2 blue

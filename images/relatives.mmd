@@ -1,0 +1,30 @@
+flowchart TD
+
+subgraph tb_mabel [ ]
+tbb[T B Boies, Sr.] --- meb[Mabel Boies]
+end
+
+subgraph mom_dad [ ]
+tss[Tom Strickler, Sr.] --- mbs[Maxine Strickler]
+end
+
+subgraph jean_charlie [ ]
+jbb[Jean Buracker] --- cb[Charlie Buracker]
+end
+
+subgraph joe_mary [ ]
+gb[Joe Boies] --- mb[Mary Boies]
+end
+
+jms[John Strickler]
+
+tb_mabel --- mbs
+tb_mabel --- jbb
+tb_mabel --- gb
+
+mom_dad --- jms
+
+jean_charlie --- db[David Buracker]
+db --- mattb[Matt Buracker]
+
+joe_mary --- ab[Anneliese Boies]

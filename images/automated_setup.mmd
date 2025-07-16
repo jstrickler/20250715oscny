@@ -1,0 +1,34 @@
+
+flowchart TD
+    START[Start]
+    PY_INSTALLED{Python Installed?}
+    PY_VERSION{Python version >= 3.10?}
+    INSTALL_PY[Install Python]
+    EXTRA[Install extra modules]
+    NON_PY[Install Non-Python utilities]
+    INSTALL_VSC[Install VSCode]
+    VSC_SETTINGS[Update VSCode settings]
+    LAB_FILES[Install Lab Files]
+    PLATFORM{Platform?}
+    WINDOWS[Windows]
+    NONWIN[Mac/Linux]
+    LAB_ZIP["Install *.zip"]
+    LAB_TGZ["Install *.tar.gz"]
+    TESTS[Run tests?]
+
+    START --> PY_INSTALLED
+    PY_INSTALLED --> |Yes|PY_VERSION
+    PY_VERSION --> |Yes|EXTRA
+    PY_INSTALLED --> |No|INSTALL_PY
+    INSTALL_PY --> EXTRA
+    EXTRA --> NON_PY
+    NON_PY --> INSTALL_VSC
+    INSTALL_VSC --> VSC_SETTINGS
+    VSC_SETTINGS --> LAB_FILES
+    LAB_FILES --> PLATFORM
+    PLATFORM --> |Windows|WINDOWS
+    PLATFORM --> |Non-Windows|NONWIN
+    WINDOWS --> LAB_ZIP
+    NONWIN --> LAB_TGZ
+    LAB_ZIP --> TESTS
+    LAB_TGZ --> TESTS

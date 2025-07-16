@@ -1,0 +1,20 @@
+flowchart LR
+    MOD_PROJECT_1[Project module] -->|import|MAIN[MAIN SCRIPT\nUI logic]
+    MOD_PROJECT_2[Project module] -->|import|MAIN
+    MOD_STDLIB_1[Stdlib module] -->|import|MAIN
+    MOD_STDLIB_2[Stdlib module] -->|import|MAIN
+    MOD_STDLIB_1 -->|import|MOD_PROJECT_1
+    MOD_STDLIB_2 -->|import|MOD_PROJECT_2
+    MOD_LOCAL_1[Local module] -->|import|MAIN
+    MOD_LOCAL_2[Local module] -->|import|MAIN
+    MOD_STDLIB_1 -->|import|MOD_LOCAL_1
+    MOD_THIRD_PARTY_1[Third party/PyPI module] -->|import|MAIN
+    MOD_THIRD_PARTY_2[Third party/PyPI module] -->|import|MAIN
+    MOD_THIRD_PARTY_1 -->|import|MOD_PROJECT_1
+    MOD_THIRD_PARTY_2 -->|import|MOD_LOCAL_2
+
+    classDef blue fill:#ebfff2
+    classDef green fill:#9f6,stroke:#333,font-style:italic,stroke-width:2px
+    class MAIN green
+    class MOD_THIRD_PARTY_1,MOD_THIRD_PARTY_2,MOD_PROJECT_1,MOD_PROJECT_2 blue
+    class MOD_LOCAL_1,MOD_LOCAL_2,MOD_STDLIB_1,MOD_STDLIB_2 blue

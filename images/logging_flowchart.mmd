@@ -1,0 +1,19 @@
+flowchart TD
+    A[Start] --> B{Logger enabled\nfor level?}
+    B --> |No|C([Stop])
+    B --> |Yes|D[Create log Record]
+    D --> E{Filter\nrejects record?}
+    E --> |Yes|C
+    E --> |No|F[Pass to current\nhandlers]
+    F --> G{Propagate true\nfor current logger?}
+    G --> |No|C
+    G --> |Yes|H{Is there a\nParent Logger?}
+    H --> |No|C
+    H --> |Yes|I[Set current\nlogger to parent]
+    I --> F
+    F --> K{Handler enabled\nfor level?}
+    K --> |No|C
+    K --> |Yes|M{Filter\nrejects record?}
+    M --> |Yes|C
+    M --> |No|N([OUTPUT MESSAGE])
+

@@ -1,0 +1,12 @@
+flowchart LR
+     std-->norm[Standard\nPython]
+     pypi[PyPI\nrepository]-->sci[ALL Anaconda]
+     pypi-->net
+     pypi-->db
+     pypi-->misc
+     std[Core library]-->ana[Anaconda\nDistribution]
+     sci(Scientific modules)-->ana
+     net(Network modules)-->ana
+     db(Database modules)-->ana
+     misc(Misc modules)-->ana
+    
