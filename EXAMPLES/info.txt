@@ -1,0 +1,16 @@
+https://github.com/jstrickler/20250715oscny
+
+pa$$w0rd
+
+jstrickler@gmail.com
+
+bpm
+    builders
+        mod1.py
+        mod2.py
+    utils
+        mod3.py
+        mod4.py
+    config
+        bpmconfig.py
+

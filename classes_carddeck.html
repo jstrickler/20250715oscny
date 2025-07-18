@@ -1,0 +1,32 @@
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <div class="mermaid">
+    
+        classDiagram
+          class Card {
+            rank
+            rank : str
+            suit
+            suit : str
+            rank_setter(value)
+          }
+          class CardDeck {
+            RANKS
+            SUITS
+            cards
+            draw()
+            get_ranks()
+            shuffle()
+          }
+          class Game {
+            register()*
+          }
+          class JokerDeck {
+          }
+          JokerDeck --|> CardDeck
+          JokerDeck --|> Game
+  
+       </div>
+  </body>
+</html>
