@@ -4,13 +4,19 @@ pa$$w0rd
 
 jstrickler@gmail.com
 
-bpm
-    builders
-        mod1.py
-        mod2.py
-    utils
-        mod3.py
-        mod4.py
-    config
-        bpmconfig.py
+DEL-216743
+216743ALB  schedu ID
 
+
+https://oscny.gov/api/people
+GET get all records
+POST add new record
+
+https://oscny.gov/api/people?name=smith&county=oswego&start=5&end=100
+GET get filtered records
+
+https://oscny.gov/api/people/123
+GET get one record
+PUT replace one record
+PATCH update one record
+DELETE delete one record

@@ -15,6 +15,7 @@ def main(args):
     response = requests.get(
         BASE_URL + args[0],
         params={'key': API_KEY},
+        timeout=5,
         # ssl, proxy, cookies, headers, etc.
     )  # send HTTP request and get HTTP response
 

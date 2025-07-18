@@ -19,10 +19,13 @@ parrots = [  # list of Parrot objects
     Parrot('Peggy', 'blue'),
     Parrot('Roger', 'red'),
 ]
+import pandas as print('-' * 60)
 
 def encode(obj):  # custom JSON encoder function
     if isinstance(obj, date):  # check for date object
         return obj.ctime()  # convert date to string
+    elif isinstance(obj, pd.DataFrame)
+        return pd.to_json(obj)
     elif isinstance(obj, Parrot):  # check for Parrot object
         return {'name': obj.name, 'color': obj.color}  # convert Parrot to dictionary
     return obj  # if not processed, return object for JSON to parse with default parser

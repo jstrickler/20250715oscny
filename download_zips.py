@@ -28,8 +28,8 @@ def download_bundle_files():
     for link in bundle_links:
         file_path = os.path.join(CONFIG.file_repo, os.path.basename(link))
         response = requests.get(link)
-        with open(file_path, 'w') as file_out:
-            file_out.write(response.text)
+        with open(file_path, 'wb') as file_out:
+            file_out.write(response.content)
 
 
 # for bundle_zip_url in all_bundle_zip_urls:
@@ -48,7 +48,11 @@ def download_bundle_files():
 #                 preparer_name = root.find('.//BusinessNameLine1Txt', root.nsmap)
 #                 print(preparer_name.text)
 #                 count += 1
+
 #     break # only process first bundled zip for now
 
 if __name__ == "__main__":
-    download_bundle_files()    
+    # download_bundle_files()
+    all_links = get_bundle_zip_links()
+    for link in all_links:
+        print(link)

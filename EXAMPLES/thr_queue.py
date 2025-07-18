@@ -20,7 +20,8 @@ class RandomWord():  # define callable class to generate words
         self._num_words = len(self._words)
 
     def __call__(self):
-        return self._words[random.randrange(0, self._num_words)]
+        return random.choice(self._words)
+        # return self._words[random.randrange(0, self._num_words)]
 
 
 class Worker(Thread):  # worker thread

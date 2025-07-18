@@ -48,3 +48,6 @@ def display_error(response, message):
     print(response.text)
     print("*" * 60)
 
+
+if __name__ == "__main__":
+    fetch_apod('2025-07-01')

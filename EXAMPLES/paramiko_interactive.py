@@ -20,7 +20,7 @@ with paramiko.SSHClient() as ssh:  # create paramiko SSH client
     result = stdout.readline()  # read output of command
     print("Result is:", result)
 
-    stdin.write("scale = 3\n")  # set scale (# decimal points) to 3 (bc-specific command)
+    stdin.write("scale = 10\n")  # set scale (# decimal points) to 3 (bc-specific command)
     stdin.write("738.3/191.9\n")
     result = stdout.readline()
     print("Result is:", result)
