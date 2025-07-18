@@ -1,4 +1,4 @@
-import pytest
+
 
 def test_stdout():  # unit test that writes to STDOUT
     print("WHOOPEE", end=" ")
@@ -9,3 +9,5 @@ def test_two(common_fixture):   # unit test that uses fixture from conftest.py
     assert "alpha" in common_fixture
     assert "beta" in common_fixture
     assert "gamma" in common_fixture
+
+# Fuquay-Varina

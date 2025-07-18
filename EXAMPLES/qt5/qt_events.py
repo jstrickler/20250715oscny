@@ -22,9 +22,6 @@ class EventsMain(QMainWindow):
         self.ui = Ui_Events()
         self.ui.setupUi(self) 
 
-        # set the File->Quit handler 
-        self.ui.actionQuit.triggered.connect(self.close) # Add an event handler callback for when Quit is selected from the the FIle menu
-
         # set the Edit->Clear Name Field handler 
         self.ui.actionClear_name_field.triggered.connect(self._clear_field)
 

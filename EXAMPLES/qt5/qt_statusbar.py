@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication
-from statusbar_ui import Ui_StatusBar
+from ui_statusbar import Ui_StatusBar
 
 class StatusBarMain(QMainWindow):
     def __init__(self):
@@ -14,7 +14,7 @@ class StatusBarMain(QMainWindow):
         self.ui.setupUi(self)
 
         self.ui.btPushMe.clicked.connect(self._pushed)
-        self.ui.btPullYou.clicked.connect(self._pulled)
+        self.ui.pushButton.clicked.connect(self._pulled)
         self._update_statusbar(0) # do initial status bar update
 
     def _pushed(self, ev):

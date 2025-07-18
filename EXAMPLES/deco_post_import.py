@@ -1,6 +1,6 @@
 from functools import cache
 from random import randint
-from geometry import circle_area
+from EXAMPLES.alpha.mathlib.geometry import circle_area
 
 circle_area = cache(circle_area)
 for _ in range(10000):  # call circle_area() 10000 times

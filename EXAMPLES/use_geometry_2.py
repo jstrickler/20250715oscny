@@ -1,4 +1,4 @@
-import geometry as g
+import alpha.mathlib.geometry as g
 
 circle = g.circle_area(8)
 print(f"{circle = }")

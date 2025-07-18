@@ -1,4 +1,4 @@
-from geometry import *
+from EXAMPLES.alpha.mathlib.geometry import *
 
 circle = circle_area(8)
 print(f"{circle = }")
@@ -8,3 +8,5 @@ print(f"{rectangle = }")
 
 square = square_area(7.9)
 print(f"{square = }")
+
+print(f"{PI = }")
